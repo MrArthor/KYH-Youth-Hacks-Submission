@@ -77,7 +77,7 @@ app.get('/About', (req, res) => {
     res.render('AboutUs', { title });
 });
 app.get("/", (req, res) => {
-    const title = 'Home Page';
+    const title = 'Help A Child';
     res.render("home", { title });
 });
 app.all("*", (req, res, next) => {

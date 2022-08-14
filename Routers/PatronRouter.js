@@ -28,7 +28,7 @@ router.post('/add', upload.array('Images'), catchAsync(async(req, res, next) => 
     await User.save();
     Patrons.User = User;
     Patrons.Images = {
-        Url: 'https://res.cloudinary.com/mrarthor/image//c_scale,w_200/v1660456481/Social-Equity/person_xgaybt.png',
+        Url: 'https://res.cloudinary.com/mrarthor/image/upload/v1660475383/Social-Equity/istockphoto-1209654046-612x612_m0xtlq.jpg',
         FileName: 'Social-Equity/person_xgaybt.jpg'
     };
     await Patrons.save();

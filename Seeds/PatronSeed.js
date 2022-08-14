@@ -28,7 +28,7 @@ function PatronSeed() {
                 email: `${Data[random1000].Email}`,
                 name: `${Data[random1000].FirstName} ${Data[random1000].LastName}`,
                 Images: {
-                    Url: 'https://res.cloudinary.com/mrarthor/image//c_scale,w_200/v1660456481/Social-Equity/person_xgaybt.png',
+                    Url: 'https://res.cloudinary.com/mrarthor/image/upload/v1660475383/Social-Equity/istockphoto-1209654046-612x612_m0xtlq.jpg',
                     FileName: 'Social-Equity/person_xgaybt.jpg'
                 },
 

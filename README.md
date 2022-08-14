@@ -5,8 +5,11 @@
 This Project Comprises of a user friendly platform for the generous donors and selfless social workers and NGOs who are always out there working for the betterment of the much needed and surpressed underprivelleged kids begging for surviving and making a living for themselves and for their loved ones
 
 - Made By: -
+
 -- [Vansh Sachdev](https://github.com/mrarthor)
+
 -- [Ishita Singh](https://github.com/Ishita-Singh1808)
+
 -- [Prateek Kanojia](https://github.com/Prateek844866)
 ## Features
 
