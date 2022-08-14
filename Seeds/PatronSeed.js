@@ -28,8 +28,8 @@ function PatronSeed() {
                 email: `${Data[random1000].Email}`,
                 name: `${Data[random1000].FirstName} ${Data[random1000].LastName}`,
                 Images: {
-                    Url: 'https://res.cloudinary.com/mrarthor/image/upload/v1659965604/HospitalManagement/download_enncgl.jpg',
-                    FileName: 'HospitalManagement/download_enncgl.jpg'
+                    Url: 'https://res.cloudinary.com/mrarthor/image//c_scale,w_200/v1660456481/Social-Equity/person_xgaybt.png',
+                    FileName: 'Social-Equity/person_xgaybt.jpg'
                 },
 
                 PhoneNumber: `${Data2[random1000].PhoneNumber}`,

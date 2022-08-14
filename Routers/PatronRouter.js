@@ -22,12 +22,15 @@ router.get('/add', IsLoggedIn, catchAsync(async(req, res, next) => {
 router.post('/add', upload.array('Images'), catchAsync(async(req, res, next) => {
     console.log(req.files);
     const Patrons = new PatronModel(req.body.Patron);
-    const imgs = req.files.map(f => ({ Url: f.path, FileName: f.filename }));
+
     const User = await UserModel.findById(req.user._id);
     User.Patrons = Patrons;
     await User.save();
     Patrons.User = User;
-    Patrons.Images = imgs;
+    Patrons.Images = {
+        Url: 'https://res.cloudinary.com/mrarthor/image//c_scale,w_200/v1660456481/Social-Equity/person_xgaybt.png',
+        FileName: 'Social-Equity/person_xgaybt.jpg'
+    };
     await Patrons.save();
     req.flash('success', 'Patron Added Successfully');
     res.redirect(`/Patron/${Patrons._id}`);

@@ -28,8 +28,8 @@ async function NGOSeed() {
                 About: NGO[random1000].Aim + ' ' + NGO[random1000].Purpose,
                 Email: NGO[random1000].Email,
                 Images: {
-                    Url: 'https://res.cloudinary.com/mrarthor/image/upload/v1659965604/HospitalManagement/download_enncgl.jpg',
-                    FileName: 'HospitalManagement/download_enncgl.jpg'
+                    Url: 'https://res.cloudinary.com/mrarthor/image/upload/c_scale,w_200/v1660456621/Social-Equity/NGO_dzftst.jpg',
+                    FileName: 'Social-Equity/NGO_dzftst.jpg'
                 },
 
             });

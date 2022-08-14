@@ -28,8 +28,8 @@ async function ChildSeed() {
                 Needs: Data1[random1000].Needs,
                 Location: NGO[random1000].Add,
                 Images: {
-                    Url: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-                    FileName: 'image.jpg'
+                    Url: 'https://res.cloudinary.com/mrarthor/image/upload/c_scale,w_200/v1660456119/Social-Equity/child_afrd0u.jpg',
+                    FileName: 'Social-Equity/child_afrd0u.jpg'
                 },
             });
 

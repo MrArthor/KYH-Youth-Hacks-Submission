@@ -20,15 +20,13 @@ router.get('/Add', IsLoggedIn, catchAsync(async(req, res, next) => {
     const title = 'Children Add Page';
     res.render('Children/ChildrenAdd', { title });
 }));
-router.post('/Add', upload.single('image'), catchAsync(async(req, res, next) => {
+router.post('/Add', catchAsync(async(req, res, next) => {
     const Child = new ChildModel(req.body.Child);
-    if (req.file) {
-        const result = await storage.upload(req.file);
-        Child.Images = {
-            Url: result.url,
-            FileName: result.originalname
-        }
-    }
+    const Photo = {
+        Url: 'https://res.cloudinary.com/mrarthor/image/upload/c_scale,w_200/v1660456119/Social-Equity/child_afrd0u.jpg',
+        FileName: 'Social-Equity/child_afrd0u.jpg'
+    };
+    Child.image = Photo;
     await Child.save();
     res.redirect('/Children');
 }));

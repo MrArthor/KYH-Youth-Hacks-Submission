@@ -15,22 +15,27 @@ router.get('/', IsLoggedIn, catchAsync(async(req, res, next) => {
     const title = 'NGOs List Page';
     res.render('NGO/NGOLIST', { title, NGOs });
 }));
-router.get('/Add', catchAsync(async(req, res, next) => {
+router.get('/Add', IsLoggedIn, catchAsync(async(req, res, next) => {
     const title = 'NGO Add Page';
     res.render('NGO/NGOADD', { title });
 }));
 router.post('/Ad', upload.any('Images'), catchAsync(async(req, res, next) => {
-    try {
-        console.log(req.files);
-        const NGO = new NGOModel(req.body.NGO);
-        const imgs = req.files.map(f => ({ Url: f.path, FileName: f.filename }));
-        NGO.Images = imgs;
-        await NGO.save();
-        req.flash('success', 'NGO Added Successfully');
-        res.redirect(`/NGO/${NGO._id}`);
-    } catch (err) {
-        console.log(err);
-    }
+
+    console.log(req.files);
+    const NGO = new NGOModel(req.body.NGO);
+    const Photo = {
+        Url: 'https://res.cloudinary.com/mrarthor/image/upload/c_scale,w_200/v1660456621/Social-Equity/NGO_dzftst.jpg',
+        FileName: 'Social-Equity/NGO_dzftst.jpg'
+    };
+    NGO.Images = Photo;
+    const User = await UserModel.findById(req.user._id);
+    User.NGO = NGO;
+    await User.save();
+    NGO.User = User;
+    await NGO.save();
+    req.flash('success', 'NGO Added Successfully');
+    res.redirect(`/NGO/${NGO._id}`);
+
 }));
 router.get('/:Id', IsLoggedIn, catchAsync(async(req, res, next) => {
     const NGO = await NGOModel.findById(req.params.Id).populate('Images').populate('Children');
@@ -48,32 +53,5 @@ router.get('/:id/SponsorChild/:ChildId', IsLoggedIn, catchAsync(async(req, res, 
     await Child.save();
 
     res.render('NGO/SponsorChild', { title, NGO, Child });
-}));
-// router.post('/Add', upload.single('image'), catchAsync(async(req, res, next) => {
-//     const NGO = new NGOModel({
-//         name: req.body.name,
-//         Location: req.body.Location,
-//         NameOfHead: req.body.NameOfHead,
-//         PhoneNumber: req.body.PhoneNumber,
-//         About: req.body.About,
-//         Email: req.body.Email,
-//     });
-//     if (req.file) {
-//         const result = await storage.upload(req.file);
-//         NGO.Images = {
-//             Url: result.url,
-//             FileName: result.originalname
-//         }
-//     }
-//     await NGO.save();
-//     res.redirect(`/NGO/${NGO._id}`, { NGO });
-// }));
-
-router.post('/Add', upload.array('Images'), catchAsync(async(req, res, next) => {
-    const NGO = new NGOModel(req.body.NGO);
-    const imgs = req.files.map(f => ({ Url: f.path, FileName: f.filename }));
-    NGO.Images = imgs;
-    await NGO.save();
-    res.redirect('/NGO');
 }));
 module.exports = router;

@@ -12,7 +12,7 @@ router.route("/register")
 
 router.route("/login")
     .get(UserController.LoginRender)
-    .post(passport.authenticate('local', { failureFlash: true, failureRedirect: '/Login' }), UserController.LoginCredentials);
+    .post(passport.authenticate('local', { failureFlash: true, failureRedirect: 'user/Login' }), UserController.LoginCredentials);
 
 router.get('/logout', UserController.Logout);
 

@@ -63,6 +63,7 @@ app.use((req, res, next) => {
     res.locals.success = req.flash('success');
     res.locals.Error = req.flash('error');
     res.locals.CurrentUser = req.user;
+
     next();
 })
 
@@ -80,7 +81,7 @@ app.get("/", (req, res) => {
     res.render("home", { title });
 });
 app.all("*", (req, res, next) => {
-    console.log(req.method, req.path);
+
     next(new ExpressError("What The Happened  Now??????", 404));
 });
 app.use((err, req, res, next) => {
