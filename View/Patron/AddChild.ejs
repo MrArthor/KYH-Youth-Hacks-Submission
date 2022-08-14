@@ -1,0 +1,48 @@
+<% layout('./layouts/boilerplate') %>
+
+    <div class="container">
+        <div class="card my-2 text-center heading fs-3" style="padding: 1px !important;">
+            <div class="card-body">
+                Register a Child
+            </div>
+        </div>
+        <form action="/Children/Add" method="POST">
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="Child[Name]">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="form-label">Age</label>
+                    <input type="text" class="form-control" id="age" name="Child[Age]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label class="form-label">Parents' Name</label>
+                    <input type="text" class="form-control" id="fathername" name="Child[ParentName]">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="Child[Location]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <label class="form-label">Special Skills</label>
+                    <input type="text" class="form-control" id="skills" name="Child[SpecialSkills]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <label class="form-label">Needs</label>
+                    <input type="text" class="form-control" id="needs" name="Child[Needs]">
+                </div>
+            </div>
+
+            <button type="submit" class="btn heading">Submit</button>
+        </form>
+    </div>

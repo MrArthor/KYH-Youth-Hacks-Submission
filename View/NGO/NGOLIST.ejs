@@ -1,0 +1,21 @@
+<% layout('/layouts/boilerplate') %>
+    <div class="container-fluid d-flex">
+        <div class="row">
+            <% for(let NGO of NGOs){ %>
+
+                <div class="card m-2 col-md-4" style="width: 18rem;">
+                    <img src="<%=NGO.Images.Url %> " alt="<%=NGO.Images.FileName  %>">
+                    <div class="card-body">
+                        <h5 class="card-title textcolor1">
+                            <%=NGO.name  %>
+                        </h5>
+                        <p class="card-text textcolor2">
+                            <%=NGO.About %>
+                        </p>
+                        <a href="/NGO/<%=NGO._id  %>" class="btn heading">About this NGO</a>
+
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>

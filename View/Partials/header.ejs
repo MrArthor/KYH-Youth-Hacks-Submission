@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg background sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="https://www.dlf.pt/dfpng/middlepng/540-5403008_child-icon-blue-blue-children-icon-png-transparent.png" alt="" width="30" height="24">
+        </a>
+
+        <a class="navbar-brand textcolor" href="/">Company</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link textcolor active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link textcolor" href="/About">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link textcolor" href="/contact">Contact</a>
+                </li>
+
+                <% if(CurrentUser){%>
+                    <li class="nav-item">
+                        <a class="nav-link textcolor" href="/Patron">Patrons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link textcolor" href="/NGO">NGOs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link textcolor" href="/Children">Children</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link textcolor" href="/user/Logout">Logout</a>
+                    </li>
+                    <div class="navbar-nav ml-auto">
+                        <% }
+                        else if(!CurrentUser){
+                             %>
+                            <li class="nav-item">
+                                <a class="nav-link textcolor" href="/user/Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link textcolor" href="/user/Register">Register</a>
+                            </li>
+                            <% } %>
+                    </div>
+            </ul>
+        </div>
+    </div>
+</nav>

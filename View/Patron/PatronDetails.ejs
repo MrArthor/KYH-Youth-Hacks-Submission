@@ -1,0 +1,39 @@
+<!-- @format -->
+
+<% layout('/layouts/boilerplate') %>
+    <div class="container">
+        <div class="heading rounded">Patron Profile</div>
+        <div class="card m-3 background1">
+            <div>
+                <img src="<%=Patron.Images.Url  %> " class="card-img-left" />
+            </div>
+            <div class="card-body">
+                <h5 class="card-title textcolor1">
+                    <%=Patron.name %>
+                </h5>
+
+                <p class="card-text textcolor2">
+                    Location:
+                    <%=Patron.Place %>
+                        <br /><br /> Job:
+                        <%=Patron.Job %> <br /><br /> Phone:
+                            <%=Patron.PhoneNumber %> <br /><br /> Email:
+                                <br /><br />
+                </p>
+            </div>
+        </div>
+        <hr />
+        <!-- 
+        <div class="card mt-2 background1" style="width: 100%">
+            <%//for(let Child in Children){%>
+                <img src="..." class="card-img-left" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title textcolor1">Child info</h5>
+                    <p class="card-text textcolor2">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                </div>
+                <hr />
+                <%//}%> -->
+    </div>
+    </div>

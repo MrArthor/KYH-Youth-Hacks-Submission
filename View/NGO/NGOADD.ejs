@@ -1,0 +1,47 @@
+<% layout('/layouts/boilerplate') %>
+    <div class="container">
+        <div class="card my-2 text-center heading fs-3" style="padding: 1px !important;">
+            <div class="card-body">
+                Register as NGO
+            </div>
+        </div>
+        <form action="/NGO/Ad" method="post" enctype="multipart/form-data" novalidate>
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <label class="form-label">Name of NGO</label>
+                    <input type="text" class="form-control" id="namengo" name="NGO[name]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="NGO[Location]">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label class="form-label">Name of Head</label>
+                    <input type="text" class="form-control" id="nameofhead" name="NGO[NameOfHead]">
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label class="form-label">Speciality</label>
+                    <input type="text" class="form-control" id="speciality" name="NGO[About]">
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label class="form-label">Email</label>
+                    <input type="eamil" class="form-control" id="email" name="NGO[Email]">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <div class="mb-3">
+                        <label class="form-label">Attach your Profile Photo</label>
+                        <input class="form-control" type="file" id="Images" name="Images" multiple>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn heading">Register</button>
+        </form>
+    </div>

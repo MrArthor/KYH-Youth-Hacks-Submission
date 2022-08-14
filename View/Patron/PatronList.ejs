@@ -1,0 +1,19 @@
+<% layout('/layouts/boilerplate') %>
+    <div class="container-fluid d-flex">
+        <div class="row">
+            <% for(let Patron of Patrons){ %>
+
+                <div class="card m-2 col-md-4" style="width: 18rem;">
+                    <img src="<%=Patron.Images.Url %> " alt="<%=Patron.Images.FileName  %>">
+                    <div class="card-body">
+                        <h5 class="card-title textcolor1">
+                            <%=Patron.name  %>
+                        </h5>
+                        <p class="card-text textcolor2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="/Patron/<%=Patron._id  %>" class="btn heading">About this Patron</a>
+
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>

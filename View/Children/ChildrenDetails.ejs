@@ -1,0 +1,37 @@
+<!-- @format -->
+
+<% layout('/layouts/boilerplate') %>
+    <div class="container">
+        <div class="heading rounded">Child Profile</div>
+        <div class="card m-3 background1">
+            <div>
+                <img src="<%=Child.Images.Url  %> " class="card-img-left" />
+            </div>
+            <div class="card-body">
+                <h5 class="card-title textcolor1">
+                    <%=Child.name %>
+                </h5>
+
+                <p class="card-text textcolor2">
+                    Age :
+                    <%=Child.Age %>
+                        <br /><br /> Address:
+                        <%=Child.Location %> <br /><br /> Phone:
+                            <%=Child.PhoneNumber %> <br /><br /> Parent's Name: -
+                                <%=Child.ParentName %> <br /><br /> Parent PhoneNumber:
+                                    <%=Child.PhoneNumber  %>
+                                        <br><br> Special Skills:
+                                        <%=Child.SpecialSkills  %>
+                                            <br> <br> Needs:
+                                            <%=Child.Needs  %>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <% if(CurrentUser.Submission==='NGO'){ %>
+        <div class="container">
+            <div class="heading rounded">
+                <a href="/NGO/<%=id %>/SponsorChild/<%=Child._id  %> ">Click Here To A Sponsor This Child </a></div>
+        </div>
+        <% } %>

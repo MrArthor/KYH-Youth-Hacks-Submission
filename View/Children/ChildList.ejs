@@ -1,0 +1,19 @@
+<% layout('/layouts/boilerplate') %>
+    <div class="container-fluid d-flex">
+        <div class="row">
+            <div class="heading rounded">
+                <a href="/Patron/<%=id %>/AddChild">Click Here To A New Child </a></div>
+            <% for (let Child of Children){ %>
+                <div class="card m-2 col-md-3" style="width: 18rem;">
+                    <img src="<%=Child.Images.Url  %> " class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title textcolor1">
+                            <%=Child.name  %>
+                        </h5>
+                        <p class="card-text textcolor2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="/Children/<%=Child._id%> " class="btn heading">Help this Kid</a>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>

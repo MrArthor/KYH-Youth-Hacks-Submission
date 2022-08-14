@@ -1,0 +1,42 @@
+<% layout('/layouts/Boilerplate') %>
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="heading mb-1">EMAIL@gmail.com</div>
+                <div class="heading mb-1">9873848046</div>
+                <div class="heading mb-1">Address</div>
+                <div class="mapouter">
+                    <div class="gmap_canvas"><iframe width="100%" height="470px" id="gmap_canvas" src="https://maps.google.com/maps?q=sheikh%20sarai,%20phase-2&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <h5 class="heading">Contact Us</h5>
+
+
+                <form method="POST" action="/contact">
+                    <div class="mb-3">
+                        <label class="form-label textcolor2">Name</label>
+                        <input type="text" class="form-control textcolor2" name="Contact[name]" placeholder="Enter Your Name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label textcolor2">Email</label>
+                        <input type="email" class="form-control textcolor2" name="Contact[email]" placeholder="Enter Your Email Id">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label textcolor2">Phone</label>
+                        <input type="text" class="form-control textcolor2" name="Contact[phone]" placeholder="Enter Phone Number">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label textcolor2">Query</label>
+                        <input type="text" class="form-control textcolor2" name="Contact[query]" placeholder="Enter Query">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label textcolor2">Message</label>
+                        <textarea name="Contact[message]" rows="5" class="form-control textcolor2"></textarea>
+                    </div>
+                    <button type="submit" class="heading text-center border-0 rounded w-100 p-2">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
