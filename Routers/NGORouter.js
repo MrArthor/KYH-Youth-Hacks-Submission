@@ -47,9 +47,10 @@ router.get('/:id/SponsorChild/:ChildId', IsLoggedIn, catchAsync(async(req, res, 
     const NGO = await NGOModel.findById(req.params.id);
     const Child = await NGO.Children.findById(req.params.ChildId);
     const title = 'NGO Sponsor Child Page';
-    NGO.Childred.push(Child);
+    NGO.Children.push(Child);
     await NGO.save();
     Child.NGO = NGO;
+    Child.isAdopted = true;
     await Child.save();
 
     res.render('NGO/SponsorChild', { title, NGO, Child });
